@@ -58,6 +58,20 @@ module Support
   end
 end
 
+# This is necessary as tests use Timber::Config.send(:new) to create
+# an instance of the Config class instead of the Timber::Config
+# singleton.
+module Timber
+  class Config
+    def logrageify!
+      integrations.action_controller.silence = true
+      integrations.action_view.silence = true
+      integrations.active_record.silence = true
+      integrations.rack.http_events.collapse_into_single_event = true
+    end
+  end
+end
+
 RSpec.configure do |config|
   config.include Support::Rails
 end

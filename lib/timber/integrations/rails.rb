@@ -1,4 +1,7 @@
 require "timber/overrides"
+
+require "timber/config/integrations/rails"
+
 require "timber/integrations/rack/error_event"
 require "timber/integrations/rack/http_context"
 require "timber/integrations/rack/http_events"

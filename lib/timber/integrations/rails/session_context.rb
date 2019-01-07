@@ -1,4 +1,3 @@
-require "timber/config"
 require "timber/contexts/session"
 require "timber/integrations/rack/middleware"
 
