@@ -8,6 +8,7 @@ rvm:
 - 2.4.2
 - jruby-1.7.26
 - jruby-9.1.9.0
+before_install: gem install bundler -v 1.17.3
 gemfile:
 - gemfiles/rails-3.0.gemfile
 - gemfiles/rails-3.1.gemfile
