@@ -8,8 +8,8 @@ module Timber
   # @example Logging an event
   #   logger.info "Payment rejected", payment_rejected: {customer_id: customer_id, amount: 100}
   class Logger < ::Logger
-    include ::ActiveSupport::LoggerThreadSafeLevel
-    include ::LoggerSilence
+    include ::ActiveSupport::LoggerThreadSafeLevel if defined?(::ActiveSupport::LoggerThreadSafeLevel)
+    include ::LoggerSilence if defined?(::LoggerSilence)
   end
 end
 
