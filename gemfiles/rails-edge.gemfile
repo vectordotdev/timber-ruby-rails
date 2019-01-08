@@ -4,4 +4,8 @@ gem 'rack', github: 'rack/rack', branch: 'master'
 gem 'arel', github: 'rails/arel', branch: 'master'
 gem 'rails', github: 'rails/rails', branch: 'master'
 
+# TODO: REMOVE ME
+gem 'timber', git: 'https://github.com/mitchellhenke/timber-ruby.git', branch: '3.0'
+gem 'timber-rack', git: 'https://github.com/timberio/timber-ruby-rack.git', branch: 'master'
+
 gemspec :path => '../'
