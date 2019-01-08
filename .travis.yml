@@ -3,9 +3,9 @@ language: ruby
 cache: bundler
 rvm:
 - 1.9.3
-- 2.2.6
-- 2.3.3
-- 2.4.2
+- 2.2.10
+- 2.3.8
+- 2.4.5
 - jruby-1.7.26
 - jruby-9.1.9.0
 before_install: gem install bundler -v 1.17.3
@@ -30,9 +30,9 @@ matrix:
   fast_finish: true
   exclude:
     - rvm: 1.9.3
-    - rvm: 2.2.6
+    - rvm: 2.2.10
       gemfile: gemfiles/rails-edge.gemfile
-    - rvm: 2.3.3
+    - rvm: 2.3.8
       gemfile: gemfiles/rails-edge.gemfile
   include:
     - rvm: 1.9.3
@@ -43,9 +43,9 @@ matrix:
       gemfile: gemfiles/rails-3.2.gemfile
   allow_failures:
   - rvm: 1.9.3 # bundler wont install the gems
-  - rvm: 2.4.2
+  - rvm: 2.4.5
     gemfile: gemfiles/rails-4.0.gemfile
-  - rvm: 2.4.2
+  - rvm: 2.4.5
     gemfile: gemfiles/rails-4.1.gemfile
   - rvm: jruby-1.7.26
   - rvm: jruby-9.1.9.0
