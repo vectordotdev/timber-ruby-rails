@@ -6,6 +6,7 @@ rvm:
 - 2.2.10
 - 2.3.8
 - 2.4.5
+- 2.5.3
 - jruby-1.7.26
 - jruby-9.1.9.0
 before_install: gem install bundler -v 1.17.3
@@ -18,6 +19,7 @@ gemfile:
 - gemfiles/rails-4.2.gemfile
 - gemfiles/rails-5.0.gemfile
 - gemfiles/rails-5.1.gemfile
+- gemfiles/rails-5.2.gemfile
 - gemfiles/rails-edge.gemfile
 env:
   global: RAILS_ENV=test
@@ -33,6 +35,8 @@ matrix:
     - rvm: 2.2.10
       gemfile: gemfiles/rails-edge.gemfile
     - rvm: 2.3.8
+      gemfile: gemfiles/rails-edge.gemfile
+    - rvm: 2.4.5
       gemfile: gemfiles/rails-edge.gemfile
   include:
     - rvm: 1.9.3
