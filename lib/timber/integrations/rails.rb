@@ -14,6 +14,8 @@ require "timber/integrations/action_dispatch"
 require "timber/integrations/action_view"
 require "timber/integrations/active_record"
 
+require "timber/integrations/rails/logger"
+
 module Timber
   module Integrations
     # Module for holding *all* Rails integrations. This module does *not*
