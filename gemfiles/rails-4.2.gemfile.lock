@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mitchellhenke/timber-ruby.git
-  revision: 82275f7d688f5f9815acdf91fe0cdf2e08aa96e6
+  revision: cef647714a4cc8c7b65792866b8c26027c72efe1
   branch: 3.0
   specs:
     timber (3.0.0.alpha.0)
