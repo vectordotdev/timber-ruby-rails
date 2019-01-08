@@ -44,7 +44,7 @@ Gem::Specification.new do |spec|
   # spec.add_runtime_dependency "timber-rack", "1.0.0.alpha.0"
 
   spec.add_development_dependency "bundler", "~> 1.0"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", ">= 0.8"
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_development_dependency("bundler-audit", ">= 0")
