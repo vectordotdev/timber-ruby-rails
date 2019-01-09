@@ -11,8 +11,6 @@ rvm:
 - jruby-9.2.5.0
 before_install: gem install bundler -v 1.17.3
 gemfile:
-- gemfiles/rails-3.0.gemfile
-- gemfiles/rails-3.1.gemfile
 - gemfiles/rails-3.2.gemfile
 - gemfiles/rails-4.0.gemfile
 - gemfiles/rails-4.1.gemfile
@@ -38,10 +36,6 @@ matrix:
     - rvm: 2.4.5
       gemfile: gemfiles/rails-4.1.gemfile
     - rvm: 2.5.3
-      gemfile: gemfiles/rails-3.0.gemfile
-    - rvm: 2.5.3
-      gemfile: gemfiles/rails-3.1.gemfile
-    - rvm: 2.5.3
       gemfile: gemfiles/rails-3.2.gemfile
     - rvm: 2.5.3
       gemfile: gemfiles/rails-4.0.gemfile
@@ -50,10 +44,6 @@ matrix:
   include:
     - rvm: 2.5.3
       gemfile: gemfiles/rails-edge.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails-3.0.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails-3.1.gemfile
     - rvm: 1.9.3
       gemfile: gemfiles/rails-3.2.gemfile
   allow_failures:
