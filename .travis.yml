@@ -32,15 +32,20 @@ matrix:
   fast_finish: true
   exclude:
     - rvm: 1.9.3
-    - rvm: 2.2.10
-      gemfile: gemfiles/rails-edge.gemfile
-    - rvm: 2.3.8
-      gemfile: gemfiles/rails-edge.gemfile
-    - rvm: 2.4.5
-      gemfile: gemfiles/rails-edge.gemfile
+    - gemfile: gemfiles/rails-edge.gemfile
     - rvm: 2.5.3
       gemfile: gemfiles/rails-3.0.gemfile
+    - rvm: 2.5.3
+      gemfile: gemfiles/rails-3.1.gemfile
+    - rvm: 2.5.3
+      gemfile: gemfiles/rails-3.2.gemfile
+    - rvm: 2.5.3
+      gemfile: gemfiles/rails-4.0.gemfile
+    - rvm: 2.5.3
+      gemfile: gemfiles/rails-4.1.gemfile
   include:
+    - rvm: 2.5.3
+      gemfile: gemfiles/rails-edge.gemfile
     - rvm: 1.9.3
       gemfile: gemfiles/rails-3.0.gemfile
     - rvm: 1.9.3
@@ -49,6 +54,7 @@ matrix:
       gemfile: gemfiles/rails-3.2.gemfile
   allow_failures:
   - rvm: 1.9.3 # bundler wont install the gems
+  - gemfile: gemfiles/rails-edge.gemfile
   - rvm: 2.4.5
     gemfile: gemfiles/rails-4.0.gemfile
   - rvm: 2.4.5
