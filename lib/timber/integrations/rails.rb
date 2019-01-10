@@ -1,6 +1,6 @@
 require "timber/overrides"
 
-require "timber/config/integrations/rails"
+require "timber-rails/config"
 
 require "timber-rack/error_event"
 require "timber-rack/http_context"
