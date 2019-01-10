@@ -1,5 +1,5 @@
 require "rails"
-require "timber/frameworks/rails"
+require "timber-rails/railtie"
 
 # Defualt the rails logger to nothing, each test shoould be
 # responsible for setting up the logger
