@@ -9,7 +9,7 @@ require "timber-rack/user_context"
 require "timber-rails/session_context"
 require "timber-rails/rack_logger"
 
-require "timber/integrations/action_controller"
+require "timber-rails/action_controller"
 require "timber-rails/action_dispatch"
 require "timber-rails/action_view"
 require "timber-rails/active_record"
