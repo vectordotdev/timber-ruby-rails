@@ -1,11 +1,9 @@
 require "timber/integration"
-require "timber-rack/error_event"
-require "timber/integrations/action_dispatch/debug_exceptions"
+require "timber-rails/action_dispatch/debug_exceptions"
 
 module Timber
   module Integrations
-    # Module for holding *all* ActionDispatch integrations. This module does *not*
-    # extend {Integration} because it's dependent on {Rack::ExceptionEvent}. This
+    # Module for holding *all* ActionDispatch integrations. This
     # module simply disables the exception tracking middleware so that our middleware
     # works as expected.
     module ActionDispatch

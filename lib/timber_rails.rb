@@ -10,7 +10,7 @@ require "timber-rails/session_context"
 require "timber-rails/rack_logger"
 
 require "timber/integrations/action_controller"
-require "timber/integrations/action_dispatch"
+require "timber-rails/action_dispatch"
 require "timber/integrations/action_view"
 require "timber-rails/active_record"
 
