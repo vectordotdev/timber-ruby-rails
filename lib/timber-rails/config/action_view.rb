@@ -1,4 +1,4 @@
-require "timber/integrations/action_view"
+require "timber-rails/action_view"
 
 module Timber
   class Config

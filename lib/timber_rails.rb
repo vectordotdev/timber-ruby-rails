@@ -11,7 +11,7 @@ require "timber-rails/rack_logger"
 
 require "timber/integrations/action_controller"
 require "timber-rails/action_dispatch"
-require "timber/integrations/action_view"
+require "timber-rails/action_view"
 require "timber-rails/active_record"
 
 require "timber-rails/logger"
