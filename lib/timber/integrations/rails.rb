@@ -7,7 +7,7 @@ require "timber-rack/http_context"
 require "timber-rack/http_events"
 require "timber-rack/user_context"
 require "timber-rails/session_context"
-require "timber/integrations/rails/rack_logger"
+require "timber-rails/rack_logger"
 
 require "timber/integrations/action_controller"
 require "timber/integrations/action_dispatch"
