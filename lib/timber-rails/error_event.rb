@@ -6,7 +6,6 @@ begin
 rescue Exception
 end
 
-require "timber/config"
 require "timber/events/error"
 require "timber-rack/middleware"
 require "timber/util"

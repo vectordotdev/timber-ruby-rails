@@ -1,5 +1,6 @@
 require "timber-rails/overrides"
 
+require "timber"
 require "timber-rails/config"
 
 require "timber-rack/http_context"
