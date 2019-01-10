@@ -2,7 +2,7 @@ require "timber-rails/overrides"
 
 require "timber-rails/config"
 
-require "timber-rack/error_event"
+require "timber-rails/error_event"
 require "timber-rack/http_context"
 require "timber-rack/http_events"
 require "timber-rack/user_context"
@@ -37,7 +37,7 @@ module Timber
       end
 
       def self.enabled=(value)
-        Timber::Integrations::Rack::ErrorEvent.enabled = value
+        Timber::Integrations::Rails::ErrorEvent.enabled = value
         Timber::Integrations::Rack::HTTPContext.enabled = value
         Timber::Integrations::Rack::HTTPEvents.enabled = value
         Timber::Integrations::Rack::UserContext.enabled = value
@@ -52,7 +52,7 @@ module Timber
       # context are added first so that context is included in subsequent log lines.
       def self.middlewares
         @middlewares ||= [Timber::Integrations::Rack::HTTPContext, SessionContext, Timber::Integrations::Rack::UserContext,
-          Timber::Integrations::Rack::HTTPEvents, Timber::Integrations::Rack::ErrorEvent].select(&:enabled?)
+          Timber::Integrations::Rack::HTTPEvents, Timber::Integrations::Rails::ErrorEvent].select(&:enabled?)
       end
     end
   end

@@ -10,7 +10,7 @@ module Timber
     # works as expected.
     module ActionDispatch
       def self.enabled?
-        Rack::ErrorEvent.enabled?
+        Rails::ErrorEvent.enabled?
       end
 
       def self.integrate!

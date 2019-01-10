@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Timber::Integrations::Rack::ErrorEvent do
+RSpec.describe Timber::Integrations::Rails::ErrorEvent do
   let(:time) { Time.utc(2016, 9, 1, 12, 0, 0) }
   let(:io) { StringIO.new }
   let(:logger) do
