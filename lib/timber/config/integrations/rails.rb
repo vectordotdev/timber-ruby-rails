@@ -1,7 +1,7 @@
 require 'timber/config/integrations/action_view'
 require 'timber/config/integrations/active_record'
 require 'timber/config/integrations/action_controller'
-require 'timber/config/integrations/rack'
+require 'timber-rack/config'
 
 Timber::Config.instance.define_singleton_method(:logrageify!) do
   integrations.action_controller.silence = true

@@ -1,5 +1,5 @@
 require "timber/integration"
-require "timber/integrations/rack/error_event"
+require "timber-rack/error_event"
 require "timber/integrations/action_dispatch/debug_exceptions"
 
 module Timber

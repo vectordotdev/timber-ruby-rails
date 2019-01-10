@@ -2,10 +2,10 @@ require "timber/overrides"
 
 require "timber/config/integrations/rails"
 
-require "timber/integrations/rack/error_event"
-require "timber/integrations/rack/http_context"
-require "timber/integrations/rack/http_events"
-require "timber/integrations/rack/user_context"
+require "timber-rack/error_event"
+require "timber-rack/http_context"
+require "timber-rack/http_events"
+require "timber-rack/user_context"
 require "timber/integrations/rails/session_context"
 require "timber/integrations/rails/rack_logger"
 
