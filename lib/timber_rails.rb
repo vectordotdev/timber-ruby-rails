@@ -1,7 +1,9 @@
 require "timber-rails/overrides"
 
 require "timber"
+require "rails"
 require "timber-rails/config"
+require "timber-rails/railtie"
 
 require "timber-rack/http_context"
 require "timber-rack/http_events"
