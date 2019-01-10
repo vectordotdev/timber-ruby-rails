@@ -1,4 +1,4 @@
-require "timber/integrations/rails"
+require "timber_rails"
 require "timber"
 require "timber/cli"
 require "timber/cli/io"
