@@ -1,4 +1,4 @@
-require "timber/integrations/active_record"
+require "timber-rails/active_record"
 
 module Timber
   class Config
