@@ -1,4 +1,4 @@
-require "timber/overrides"
+require "timber-rails/overrides"
 
 require "timber-rails/config"
 
