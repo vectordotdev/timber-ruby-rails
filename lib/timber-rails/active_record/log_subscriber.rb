@@ -1,4 +1,4 @@
-require "timber/integrator"
+require "timber-rails/active_record/log_subscriber/timber_log_subscriber"
 
 module Timber
   module Integrations
@@ -8,12 +8,6 @@ module Timber
       #
       # @private
       class LogSubscriber < Integrator
-        def initialize
-          require "timber/integrations/active_record/log_subscriber/timber_log_subscriber"
-        rescue LoadError => e
-          raise RequirementNotMetError.new(e.message)
-        end
-
         def integrate!
           return true if Util::ActiveSupportLogSubscriber.subscribed?(:active_record, TimberLogSubscriber)
 

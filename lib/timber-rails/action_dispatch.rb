@@ -1,4 +1,3 @@
-require "timber/integration"
 require "timber-rails/action_dispatch/debug_exceptions"
 
 module Timber

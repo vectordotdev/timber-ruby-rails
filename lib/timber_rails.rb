@@ -2,12 +2,12 @@ require "timber-rails/overrides"
 
 require "timber-rails/config"
 
-require "timber-rails/error_event"
 require "timber-rack/http_context"
 require "timber-rack/http_events"
 require "timber-rack/user_context"
 require "timber-rails/session_context"
 require "timber-rails/rack_logger"
+require "timber-rails/error_event"
 
 require "timber-rails/action_controller"
 require "timber-rails/action_dispatch"

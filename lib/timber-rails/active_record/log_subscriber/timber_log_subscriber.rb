@@ -4,8 +4,6 @@
 require "active_record"
 require "active_record/log_subscriber"
 
-require "timber/integrator"
-
 module Timber
   module Integrations
     module ActiveRecord

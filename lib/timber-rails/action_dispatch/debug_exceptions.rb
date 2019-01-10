@@ -1,5 +1,3 @@
-require "timber/integrator"
-
 module Timber
   module Integrations
     module ActionDispatch

@@ -1,4 +1,3 @@
-require "timber/integration"
 require "timber-rails/active_record/log_subscriber"
 
 module Timber

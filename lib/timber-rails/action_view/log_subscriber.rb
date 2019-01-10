@@ -1,5 +1,3 @@
-require "timber/integrator"
-
 module Timber
   module Integrations
     module ActionView
@@ -10,7 +8,7 @@ module Timber
       class LogSubscriber < Integrator
         def initialize
           require "action_view/log_subscriber"
-          require "timber/integrations/action_view/log_subscriber/timber_log_subscriber"
+          require "timber-rails/action_view/log_subscriber/timber_log_subscriber"
         rescue LoadError => e
           raise RequirementNotMetError.new(e.message)
         end
