@@ -51,8 +51,8 @@ RSpec.describe Timber::Integrations::ActionView::LogSubscriber do
         it "should log a template render event once" do
           dispatch_rails_request("/action_view_log_subscriber")
           lines = clean_lines(io.string.split("\n"))
-          expect(lines[2].strip).to start_with("Rendered spec/support/rails/templates/template.html (0.0ms) @metadata {\"level\":\"info\"")
-          expect(lines[2]).to include("\"event\":{\"template_render\":{\"name\":\"spec/support/rails/templates/template.html\",\"time_ms\":0.0}},")
+          expect(lines[2].strip).to match(/^Rendered spec\/support\/rails\/templates\/template.html \(\d+\.\d+ms\) @metadata {"level":"info"/)
+          expect(lines[2]).to match(/"event":{"template_render":{"name":"spec\/support\/rails\/templates\/template\.html","time_ms":\d+\.\d+}},/)
         end
       end
     end
@@ -62,7 +62,7 @@ RSpec.describe Timber::Integrations::ActionView::LogSubscriber do
     describe described_class::TimberLogSubscriber do
       let(:event) do
         event = Struct.new(:duration, :payload)
-        event.new(2, identifier: "path/to/template.html")
+        event.new(2.0, identifier: "path/to/template.html")
       end
 
       around(:each) do |example|
