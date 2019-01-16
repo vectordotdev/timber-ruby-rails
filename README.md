@@ -15,10 +15,6 @@ you more productive.
 1. [**Installation**](#installation)
 2. [**Usage** - Simple & powerful API](#usage)
 3. [**Configuration** - Simple & powerful API](#configuration)
-4. [**Integrations** - Automatic context and metadata for your existing logs](#integrations)
-5. [**The Timber Console** - Designed for applications & developers](#the-timber-console)
-6. [**Get things done with your logs 💪**](#get-things-done-with-your-logs)
-
 
 ## Installation
 
@@ -133,8 +129,6 @@ parameters passed to the controller, which are generally valuable when debugging
 For a full list of integration settings, see
 [Timber::Config::Integrations](http://www.rubydoc.info/github/timberio/timber-ruby/Timber/Config/Integrations)
 
----
-
 ### Silence Specific Requests
 
 Silencing noisy requests can be helpful for silencing load balance health checks, bot scanning,
@@ -152,8 +146,6 @@ end
 We require a block because it gives you complete control over how you want to silence requests.
 The first parameter being the traditional Rack env hash, the second being a
 [Rack Request](http://www.rubydoc.info/gems/rack/Rack/Request) object.
-
----
 
 ### User Context
 
@@ -184,8 +176,6 @@ end
 
 *All* of the user hash keys are optional, but you must provide at least one.
 
----
-
 ### Release Context
 
 [Timber::Contexts::Release](http://www.rubydoc.info/github/timberio/timber-ruby/Timber/Contexts/Release)
@@ -200,5 +190,3 @@ set the following environment variables and this context will be added automatic
 3. `RELEASE_VERSION` - Ex: `v2.3.1`
 
 All variables are optional, but at least one must be present.
-
----
