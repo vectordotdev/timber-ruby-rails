@@ -20,22 +20,10 @@ RSpec.describe ActiveSupport::TaggedLogging, :rails_23 => true do
     let(:io) { StringIO.new }
     let(:logger) { ActiveSupport::TaggedLogging.new(Timber::Logger.new(io)) }
 
-    around(:each) do |example|
-      Timecop.freeze(time) { example.run }
-    end
-
-    it "should format properly with events" do
-      event = Timber::Events::SQLQuery.new(sql: "select * from users", time_ms: 56, message: "select * from users")
-      logger.tagged("tag") do
-        logger.info(event)
-      end
-      expect(io.string).to include("\"tags\":[\"tag\"]")
-    end
-
     it "should accept events as the second argument" do
       logger.info("SQL query", payment_rejected: {customer_id: "abcd1234", amount: 100, reason: "Card expired"})
       expect(io.string).to start_with("SQL query @metadata")
-      expect(io.string).to include("\"event\":{\"custom\":{\"payment_rejected\":")
+      expect(io.string).to include("\"payment_rejected\":")
     end
   end
 end

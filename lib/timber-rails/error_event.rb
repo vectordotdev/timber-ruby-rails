@@ -25,12 +25,22 @@ module Timber
           rescue Exception => exception
             Config.instance.logger.fatal do
               backtrace = extract_backtrace(env, exception)
-
-              Events::Error.new(
+              error = Events::Error.new(
                 name: exception.class.name,
                 error_message: exception.message,
                 backtrace: backtrace
               )
+
+              {
+                message: error.message,
+                event: {
+                  error: {
+                    name: error.name,
+                    message: error.error_message,
+                    backtrace_json: error.backtrace_json,
+                  }
+                }
+              }
             end
 
             raise exception

@@ -35,9 +35,10 @@ RSpec.describe Timber::Integrations::ActiveRecord::LogSubscriber do
         string = io.string.gsub("   ORDER BY", " ORDER BY")
         string = string.gsub("  ORDER BY", " ORDER BY")
         expect(string).to include("select * from users")
+        expect(string).to include("duration_ms")
         expect(string).to include("@metadata")
         expect(string).to include("\"level\":\"debug\"")
-        expect(string).to include("\"event\":{\"sql_query\"")
+        expect(string).to include("\"sql_query_executed\":")
       end
     end
   end

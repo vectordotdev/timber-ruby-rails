@@ -18,11 +18,21 @@ module Timber
               message << " within #{from_rails_root(event.payload[:layout])}" if event.payload[:layout]
               message << " (#{event.duration.round(1)}ms)"
 
-              Events::TemplateRender.new(
+              template_render = Events::TemplateRender.new(
                 name: full_name,
-                time_ms: event.duration,
+                duration_ms: event.duration,
                 message: message
               )
+
+              {
+                message: template_render.message,
+                event: {
+                  template_rendered: {
+                    name: template_render.name,
+                    duration_ms: template_render.duration_ms,
+                  }
+                }
+              }
             end
           end
 
@@ -36,11 +46,21 @@ module Timber
               message << " (#{event.duration.round(1)}ms)"
               message << " #{cache_message(event.payload)}" if event.payload.key?(:cache_hit)
 
-              Events::TemplateRender.new(
+              template_render = Events::TemplateRender.new(
                 name: full_name,
-                time_ms: event.duration,
+                duration_ms: event.duration,
                 message: message
               )
+
+              {
+                message: template_render.message,
+                event: {
+                  template_rendered: {
+                    name: template_render.name,
+                    duration_ms: template_render.duration_ms,
+                  }
+                }
+              }
             end
           end
 
@@ -54,11 +74,21 @@ module Timber
                 message = "  Rendered collection of #{full_name}" \
                   " #{render_count(event.payload)} (#{event.duration.round(1)}ms)"
 
-                Events::TemplateRender.new(
+                template_render = Events::TemplateRender.new(
                   name: full_name,
-                  time_ms: event.duration,
+                  duration_ms: event.duration,
                   message: message
                 )
+
+                {
+                  message: template_render.message,
+                  event: {
+                    template_rendered: {
+                      name: template_render.name,
+                      duration_ms: template_render.duration_ms,
+                    }
+                  }
+                }
               end
             else
               # Older versions of rails delegate this method to #render_template

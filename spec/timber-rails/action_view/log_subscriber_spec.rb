@@ -52,7 +52,7 @@ RSpec.describe Timber::Integrations::ActionView::LogSubscriber do
           dispatch_rails_request("/action_view_log_subscriber")
           lines = clean_lines(io.string.split("\n"))
           expect(lines[2].strip).to match(/^Rendered spec\/support\/rails\/templates\/template.html \(\d+\.\d+ms\) @metadata {"level":"info"/)
-          expect(lines[2]).to match(/"event":{"template_render":{"name":"spec\/support\/rails\/templates\/template\.html","time_ms":\d+\.\d+}},/)
+          expect(lines[2]).to match(/"event":{"template_rendered":{"name":"spec\/support\/rails\/templates\/template\.html","duration_ms":\d+\.\d+}},/)
         end
       end
     end

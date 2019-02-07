@@ -22,13 +22,21 @@ module Timber
 
             if @message
               payload = event.payload
-              event = Events::SQLQuery.new(
+              sql_query = Events::SQLQuery.new(
                 sql: payload[:sql],
-                time_ms: event.duration,
+                duration_ms: event.duration,
                 message: @message
               )
 
-              logger.debug event
+              logger.debug({
+                message: sql_query.message,
+                event: {
+                  sql_query_executed: {
+                    sql: sql_query.sql,
+                    duration_ms: sql_query.duration_ms,
+                  }
+                }
+              })
 
               @message = nil
             end

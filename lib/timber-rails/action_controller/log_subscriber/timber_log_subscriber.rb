@@ -18,12 +18,23 @@ module Timber
               format  = extract_format(payload)
               format  = format.to_s.upcase if format.is_a?(Symbol)
 
-              Events::ControllerCall.new(
+              controller_call = Events::ControllerCall.new(
                 controller: payload[:controller],
                 action: payload[:action],
                 format: format,
                 params: params
               )
+
+              {
+                message: controller_call.message,
+                event: {
+                  controller_called: {
+                    controller: controller_call.controller,
+                    action: controller_call.action,
+                    params_json: controller_call.params_json,
+                  }
+                }
+              }
             end
           end
 
