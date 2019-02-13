@@ -28,15 +28,15 @@ module Timber
                 message: @message
               )
 
-              logger.debug({
-                message: sql_query.message,
+              logger.debug(Timber::Event.new(
+                @message,
                 event: {
                   sql_query_executed: {
                     sql: sql_query.sql,
                     duration_ms: sql_query.duration_ms,
                   }
                 }
-              })
+              ))
 
               @message = nil
             end
