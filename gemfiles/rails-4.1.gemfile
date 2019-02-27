@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.0'
 # TODO: REMOVE ME
-gem 'timber', git: 'https://github.com/timberio/timber-ruby.git', branch: '3.0-minus-events'
-gem 'timber-rack', git: 'https://github.com/timberio/timber-ruby-rack.git', branch: 'remove-events'
+gem 'timber', git: 'https://github.com/timberio/timber-ruby.git', branch: '3.0'
+gem 'timber-rack', git: 'https://github.com/timberio/timber-ruby-rack.git', branch: 'master'
 
 if RUBY_PLATFORM == "java"
   gem 'mime-types', '2.6.2'
