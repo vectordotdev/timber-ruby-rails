@@ -1,4 +1,4 @@
-require "timber_rails"
+require "timber-rails"
 require "timber"
 require "timber/config"
 
