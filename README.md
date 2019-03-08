@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/timberio/timber-ruby-rails.svg?branch=master)](https://travis-ci.org/timberio/timber-ruby-rails)
 [![Code Climate](https://codeclimate.com/github/timberio/timber-ruby-rails/badges/gpa.svg)](https://codeclimate.com/github/timberio/timber-ruby-rails)
 
-This library integrates the [`timber` Ruby library][timber_ruby] with the [Rails][rails] framework,
-turning your Rails logs into rich structured events.
+This library integrates the [`timber` Ruby library](https://github.com/timberio/timber-ruby) with the [rails](https://github.com/rails/rails) framework,
+turning your rails logs into rich structured events.
 
 * **Sign-up: [https://app.timber.io](https://app.timber.io)**
 * **Documentation: [https://docs.timber.io/setup/languages/ruby/integrations/rails](https://docs.timber.io/setup/languages/ruby/integrations/rails)**
