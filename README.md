@@ -3,7 +3,6 @@
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 [![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/github/timberio/timber-ruby-rails)
 [![Build Status](https://travis-ci.org/timberio/timber-ruby-rails.svg?branch=master)](https://travis-ci.org/timberio/timber-ruby-rails)
-[![Code Climate](https://codeclimate.com/github/timberio/timber-ruby-rails/badges/gpa.svg)](https://codeclimate.com/github/timberio/timber-ruby-rails)
 
 This library integrates the [`timber` Ruby library](https://github.com/timberio/timber-ruby) with the [rails](https://github.com/rails/rails) framework,
 turning your rails logs into rich structured events.
