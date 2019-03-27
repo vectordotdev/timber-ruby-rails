@@ -9,9 +9,9 @@ module Timber
       # @private
       class LogSubscriber < Integrator
         def integrate!
-          return true if Util::ActiveSupportLogSubscriber.subscribed?(:active_record, TimberLogSubscriber)
+          return true if Timber::Integrations::Rails::ActiveSupportLogSubscriber.subscribed?(:active_record, TimberLogSubscriber)
 
-          Util::ActiveSupportLogSubscriber.unsubscribe!(:active_record, ::ActiveRecord::LogSubscriber)
+          Timber::Integrations::Rails::ActiveSupportLogSubscriber.unsubscribe!(:active_record, ::ActiveRecord::LogSubscriber)
           TimberLogSubscriber.attach_to(:active_record)
         end
       end

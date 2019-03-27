@@ -22,7 +22,7 @@ RSpec.describe ActiveSupport::TaggedLogging, :rails_23 => true do
 
     it "should accept events as the second argument" do
       logger.info("SQL query", payment_rejected: {customer_id: "abcd1234", amount: 100, reason: "Card expired"})
-      expect(io.string).to start_with("SQL query @metadata")
+      expect(io.string).to include("SQL query")
       expect(io.string).to include("\"payment_rejected\":")
     end
   end

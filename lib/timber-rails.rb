@@ -2,6 +2,7 @@ require "timber-rails/overrides"
 
 require "timber"
 require "rails"
+require "timber-rails/active_support_log_subscriber"
 require "timber-rails/config"
 require "timber-rails/railtie"
 
@@ -16,6 +17,7 @@ require "timber-rails/action_controller"
 require "timber-rails/action_dispatch"
 require "timber-rails/action_view"
 require "timber-rails/active_record"
+
 
 require "timber-rails/logger"
 

@@ -43,9 +43,9 @@ RSpec.describe Timber::Integrations::Rack::HTTPEvents do
       lines = clean_lines(io.string.split("\n"))
       expect(lines.length).to eq(3)
 
-      expect(lines[0]).to start_with("Started GET \"/rack_http\" @metadata ")
-      expect(lines[1]).to start_with("Processing by RackHttpController#index as HTML @metadata ")
-      expect(lines[2]).to start_with("Completed 200 OK in 0.0ms @metadata ")
+      expect(lines[0]).to include("Started GET \\\"/rack_http\\\"")
+      expect(lines[1]).to include("Processing by RackHttpController#index as HTML")
+      expect(lines[2]).to include("Completed 200 OK in 0.0ms")
     end
 
     context "with the route silenced" do
@@ -86,8 +86,8 @@ RSpec.describe Timber::Integrations::Rack::HTTPEvents do
         lines = clean_lines(io.string.split("\n"))
         expect(lines.length).to eq(2)
 
-        expect(lines[0]).to start_with("Processing by RackHttpController#index as HTML @metadata ")
-        expect(lines[1]).to start_with("GET /rack_http completed with 200 OK in 0.0ms @metadata ")
+        expect(lines[0]).to include("Processing by RackHttpController#index as HTML")
+        expect(lines[1]).to include("GET /rack_http completed with 200 OK in 0.0ms")
       end
     end
   end

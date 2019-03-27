@@ -41,7 +41,7 @@ RSpec.describe Timber::Integrations::ActionController::LogSubscriber do
       dispatch_rails_request("/log_subscriber?query=value")
       lines = clean_lines(io.string.split("\n"))
       expect(lines.length).to eq(3)
-      expect(lines[1]).to start_with('Processing by LogSubscriberController#index as HTML\n  Parameters: {"query"=>"value"} @metadata {"level":"info","dt":"2016-09-01T12:00:00.000000Z"')
+      expect(lines[1]).to include("Processing by LogSubscriberController#index as HTML")
       expect(lines[1]).to include('"event":{"controller_called":{"controller":"LogSubscriberController","action":"index","params_json":"{\"query\":\"value\"}"}}')
     end
 

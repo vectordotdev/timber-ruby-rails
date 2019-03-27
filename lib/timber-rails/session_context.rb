@@ -11,12 +11,9 @@ module Timber
           id = get_session_id(env)
           if id
             context = Contexts::Session.new(id: id)
-            CurrentContext.with(context) do
-              @app.call(env)
-            end
-          else
-            @app.call(env)
+            CurrentContext.add(context.to_hash)
           end
+          @app.call(env)
         end
 
         private

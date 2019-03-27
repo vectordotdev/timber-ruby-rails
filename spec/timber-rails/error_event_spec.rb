@@ -49,9 +49,9 @@ RSpec.describe Timber::Integrations::Rails::ErrorEvent do
 
       expect(lines.length).to eq(3)
 
-      expect(lines[0]).to start_with("Started GET \"/rack_error\" @metadata ")
-      expect(lines[1]).to start_with("Processing by RackErrorController#index as HTML @metadata ")
-      expect(lines[2]).to start_with("RuntimeError (Boom!) @metadata")
+      expect(lines[0]).to include("Started GET \\\"/rack_error\\\"")
+      expect(lines[1]).to include("Processing by RackErrorController#index as HTML")
+      expect(lines[2]).to include("RuntimeError (Boom!)")
     end
   end
 

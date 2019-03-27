@@ -14,9 +14,9 @@ module Timber
         end
 
         def integrate!
-          return true if Util::ActiveSupportLogSubscriber.subscribed?(:action_view, TimberLogSubscriber)
+          return true if Timber::Integrations::Rails::ActiveSupportLogSubscriber.subscribed?(:action_view, TimberLogSubscriber)
 
-          Util::ActiveSupportLogSubscriber.unsubscribe!(:action_view, ::ActionView::LogSubscriber)
+          Timber::Integrations::Rails::ActiveSupportLogSubscriber.unsubscribe!(:action_view, ::ActionView::LogSubscriber)
           TimberLogSubscriber.attach_to(:action_view)
         end
       end

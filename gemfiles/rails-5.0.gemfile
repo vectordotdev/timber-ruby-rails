@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0'
 # TODO: REMOVE ME
-gem 'timber', git: 'https://github.com/timberio/timber-ruby.git', branch: '3.0'
+gem 'timber', git: 'https://github.com/timberio/timber-ruby.git', branch: '3.0-cleanup'
 gem 'timber-rack', git: 'https://github.com/timberio/timber-ruby-rack.git', branch: 'master'
 
 if RUBY_PLATFORM == "java"

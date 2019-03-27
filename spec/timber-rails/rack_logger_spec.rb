@@ -42,9 +42,9 @@ RSpec.describe Timber::Integrations::Rails::RackLogger do
 
         lines = clean_lines(io.string.split("\n"))
         expect(lines.length).to eq(3)
-        expect(lines[0]).to start_with("Started GET \"/rails_rack_logger\" @metadata")
-        expect(lines[1]).to start_with("Processing by RailsRackLoggerController#index as HTML @metadata")
-        expect(lines[2]).to start_with("Completed 200 OK in 0.0ms @metadata")
+        expect(lines[0]).to include("Started GET \\\"/rails_rack_logger\\\"")
+        expect(lines[1]).to include("Processing by RailsRackLoggerController#index as HTML")
+        expect(lines[2]).to include("Completed 200 OK in 0.0ms")
       end
     end
   end

@@ -39,7 +39,8 @@ RSpec.describe Timber::Integrations::ActionDispatch::DebugExceptions do
 
       lines = clean_lines(io.string.split("\n"))
       expect(lines.length).to eq(3)
-      expect(lines[2]).to start_with('RuntimeError (boom) @metadata {"level":"fatal",')
+      expect(lines[2]).to include('RuntimeError (boom)')
+      expect(lines[2]).to include('fatal')
       expect(lines[2]).to include("\"event\":{\"error\":{\"name\":\"RuntimeError\",\"message\":\"boom\",\"backtrace_json\":\"[")
     end
 
