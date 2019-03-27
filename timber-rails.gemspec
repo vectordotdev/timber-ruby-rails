@@ -34,9 +34,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "rails", ">= 3.0.0", "< 6.0.0"
-  # TODO add these
-  # spec.add_runtime_dependency "timber", "3.0.0.alpha.0"
-  # spec.add_runtime_dependency "timber-rack", "1.0.0.alpha.0"
+  spec.add_runtime_dependency "timber", "~> 3.0"
+  spec.add_runtime_dependency "timber-rack", "~> 1.0"
 
   spec.add_development_dependency "bundler", ">= 0.0"
 
