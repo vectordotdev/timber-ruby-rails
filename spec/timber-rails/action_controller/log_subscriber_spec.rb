@@ -42,7 +42,7 @@ RSpec.describe Timber::Integrations::ActionController::LogSubscriber do
       lines = clean_lines(io.string.split("\n"))
       expect(lines.length).to eq(3)
       expect(lines[1]).to include("Processing by LogSubscriberController#index as HTML")
-      expect(lines[1]).to include('"event":{"controller_called":{"controller":"LogSubscriberController","action":"index","params_json":"{\"query\":\"value\"}"}}')
+      expect(lines[1]).to include('"controller_called":{"controller":"LogSubscriberController","action":"index","params_json"')
     end
 
     # Remove blank lines since Rails does this to space out requests in the logs

@@ -41,7 +41,7 @@ RSpec.describe Timber::Integrations::ActionDispatch::DebugExceptions do
       expect(lines.length).to eq(3)
       expect(lines[2]).to include('RuntimeError (boom)')
       expect(lines[2]).to include('fatal')
-      expect(lines[2]).to include("\"event\":{\"error\":{\"name\":\"RuntimeError\",\"message\":\"boom\",\"backtrace_json\":\"[")
+      expect(lines[2]).to include("\"error\":{\"name\":\"RuntimeError\",\"message\":\"boom\",\"backtrace_json\":\"[")
     end
 
     # Remove blank lines since Rails does this to space out requests in the logs

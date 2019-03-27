@@ -52,7 +52,7 @@ RSpec.describe Timber::Integrations::ActionView::LogSubscriber do
           dispatch_rails_request("/action_view_log_subscriber")
           lines = clean_lines(io.string.split("\n"))
           expect(lines[2].strip).to match(/Rendered spec\/support\/rails\/templates\/template.html \(\d+\.\d+ms\)/)
-          expect(lines[2]).to match(/"event":{"template_rendered":{"name":"spec\/support\/rails\/templates\/template\.html","duration_ms":\d+\.\d+}},/)
+          expect(lines[2]).to include("\"template_rendered\":{\"name\":\"spec/support/rails/templates/template.html\"")
         end
       end
     end
@@ -99,7 +99,7 @@ RSpec.describe Timber::Integrations::ActionView::LogSubscriber do
           if log_subscriber.respond_to?(:render_count, true)
             expect(io.string.strip).to include("Rendered collection of path/to/template.html [ times] (2.0ms)")
           else
-            expect(io.string.strip).to start_with("Rendered path/to/template.html (2.0ms)")
+            expect(io.string.strip).to include("Rendered path/to/template.html (2.0ms)")
           end
         end
       end
