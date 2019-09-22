@@ -18,6 +18,7 @@ gemfile:
 - gemfiles/rails-5.0.gemfile
 - gemfiles/rails-5.1.gemfile
 - gemfiles/rails-5.2.gemfile
+- gemfiles/rails-6.0.gemfile
 - gemfiles/rails-edge.gemfile
 env:
   global: RAILS_ENV=test
@@ -31,10 +32,16 @@ matrix:
   exclude:
     - rvm: 1.9.3
     - gemfile: gemfiles/rails-edge.gemfile
+    - rvm: 2.2.10
+      gemfile: gemfiles/rails-6.0.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/rails-6.0.gemfile
     - rvm: 2.4.7
       gemfile: gemfiles/rails-4.0.gemfile
     - rvm: 2.4.7
       gemfile: gemfiles/rails-4.1.gemfile
+    - rvm: 2.4.7
+      gemfile: gemfiles/rails-6.0.gemfile
     - rvm: 2.5.6
       gemfile: gemfiles/rails-3.2.gemfile
     - rvm: 2.5.6
