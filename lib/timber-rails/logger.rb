@@ -9,7 +9,12 @@ module Timber
   #   logger.info "Payment rejected", payment_rejected: {customer_id: customer_id, amount: 100}
   class Logger < ::Logger
     include ::ActiveSupport::LoggerThreadSafeLevel if defined?(::ActiveSupport::LoggerThreadSafeLevel)
-    include ::LoggerSilence if defined?(::LoggerSilence)
+
+    if defined?(::ActiveSupport::LoggerSilence)
+      include ::ActiveSupport::LoggerSilence
+    elsif defined?(::LoggerSilence)
+      include ::LoggerSilence
+    end
   end
 end
 
