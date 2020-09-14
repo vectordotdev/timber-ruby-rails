@@ -67,7 +67,7 @@ module Timber
           end
 
           private
-            def log_rendering_start(payload)
+            def log_rendering_start(*args)
               # Consolidates 2 template rendering events into 1. We don't need 2 events for
               # rendering a template. If you disagree, please feel free to open a PR and we
               # can make this an option.
